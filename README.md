@@ -200,10 +200,8 @@ table <WebsiteAllowed> persist { 127.0.0.1, YOUR_ADMIN_IP }
 In `Binary/DDosCheck.hpp`:
 
 ```cpp
-#define VALIDATOR_HOST "YOUR_SERVER_IP"  // sau 127.0.0.1 pentru local
-#define VALIDATOR_PORT "52488"
-#define VALIDATOR_ENDPOINT_SIMPLE "/simple"  // Simple one-step validation
-#define VALIDATOR_ENDPOINT_SECURE "/validate"  // Two-step secure validation
+#define WEBLINK_SIMPLE "http://127.0.0.1:52488/simple"  // Simple one-step validation
+#define WEBLINK_SECURE "http://127.0.0.1:52488/validate"  // Two-step secure validation
 
 // Alege modul de validare
 bool DDosCheckResponse()
@@ -226,12 +224,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
     WebBrowser_Startup(hInstance);
     
     // Valideaza IP-ul inainte de a continua
-    if (!DDosCheckResponse()) 
-    {
-      MessageBoxA(NULL, "Verificare esuata!!!", "Metin2 | Anti-DDos", MB_OK | MB_ICONEXCLAMATION);
-      return false;
-    }
-    
+    DDosCheckResponse();
     // Continua cu aplicatia...
 }
 ```
