@@ -4,6 +4,8 @@
 
 Improved anti-DDoS system for FreeBSD with advanced protection against DDoS attacks, SYN flood, port scanning and brute force. Replaces nginx+PHP with a lightweight Node.js server for enhanced performance.
 
+<img width="600" height="350" alt="image" src="https://i.gyazo.com/e7fce8dbc8105b97240c7d1c453c6b42.gif" />
+
 ## Workspace Structure
 
 ```
